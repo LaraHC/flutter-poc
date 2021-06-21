@@ -1,10 +1,12 @@
 import 'package:admin/responsive.dart';
 import 'package:admin/screens/dashboard/components/my_fields.dart';
+import 'package:admin/screens/main/components/tabBarDemo.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import 'components/header.dart';
 
+import 'components/recent_charts.dart';
 import 'components/recent_files.dart';
 import 'components/storage_details.dart';
 
@@ -25,9 +27,11 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
+                      //TabBarDemo(),
                       MyFiles(),
                       SizedBox(height: defaultPadding),
                       RecentFiles(),
+                      SizedBox(height: defaultPadding),
                       RecentCharts(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),

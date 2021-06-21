@@ -6,14 +6,11 @@ import '../../../constants.dart';
 class StorageInfoCard extends StatelessWidget {
   const StorageInfoCard({
     Key? key,
-    required this.title,
-    required this.svgSrc,
-    required this.amountOfFiles,
-    required this.numOfFiles,
+    required this.yearsTitle,
+    required this.yearsInfo,
   }) : super(key: key);
 
-  final String title, svgSrc, amountOfFiles;
-  final int numOfFiles;
+  final String yearsTitle, yearsInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +28,7 @@ class StorageInfoCard extends StatelessWidget {
           SizedBox(
             height: 20,
             width: 20,
-            child: SvgPicture.asset(svgSrc),
+            child: Icon(Icons.female),
           ),
           Expanded(
             child: Padding(
@@ -40,12 +37,12 @@ class StorageInfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    yearsTitle,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    "$numOfFiles Files",
+                    "$yearsInfo Years",
                     style: Theme.of(context)
                         .textTheme
                         .caption!
@@ -55,7 +52,6 @@ class StorageInfoCard extends StatelessWidget {
               ),
             ),
           ),
-          Text(amountOfFiles)
         ],
       ),
     );

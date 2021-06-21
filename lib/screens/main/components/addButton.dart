@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
 import '../../../responsive.dart';
+import 'form.dart';
 
 class AddButton extends StatelessWidget {
   const AddButton({
@@ -21,7 +22,24 @@ class AddButton extends StatelessWidget {
           borderRadius: new BorderRadius.circular(30.0),
         ),
       ),
-      onPressed: () {},
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('AlertDialog Title'),
+          content: const Text('AlertDialog description'),
+          actions: <Widget>[
+            MyForm(),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'OK'),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
+      ),
       icon: Icon(Icons.add),
       label: Text("Add New"),
     );

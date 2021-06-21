@@ -1,3 +1,4 @@
+import 'package:admin/screens/dashboard/components/storage_info_titles.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -23,38 +24,20 @@ class StarageDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Storage Details",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+          //SizedBox(height: defaultPadding),
+          //LineChartWidget(),
+          StorageInfoTitles(
+            patientID: "esijd84",
+            customID: "Patient 34",
+            status: "active",
+            associatedCarers: "EricCarer",
           ),
-          SizedBox(height: defaultPadding),
-          LineChartWidget(),
-          StorageInfoCard(
-            svgSrc: "assets/icons/Documents.svg",
-            title: "Documents Files",
-            amountOfFiles: "1.3GB",
-            numOfFiles: 1328,
+          Divider(
+              color: Colors.white,
           ),
           StorageInfoCard(
-            svgSrc: "assets/icons/media.svg",
-            title: "Media Files",
-            amountOfFiles: "15.3GB",
-            numOfFiles: 1328,
-          ),
-          StorageInfoCard(
-            svgSrc: "assets/icons/folder.svg",
-            title: "Other Files",
-            amountOfFiles: "1.3GB",
-            numOfFiles: 1328,
-          ),
-          StorageInfoCard(
-            svgSrc: "assets/icons/unknown.svg",
-            title: "Unknown",
-            amountOfFiles: "1.3GB",
-            numOfFiles: 140,
+            yearsTitle: "Years",
+            yearsInfo: "32",
           ),
         ],
       ),
