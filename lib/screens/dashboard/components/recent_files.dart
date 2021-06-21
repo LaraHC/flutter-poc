@@ -1,7 +1,7 @@
 import 'package:admin/models/RecentFile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:admin/screens/main/components/myDataTable.dart';
 import '../../../constants.dart';
 
 class RecentFiles extends StatelessWidget {
@@ -24,28 +24,10 @@ class RecentFiles extends StatelessWidget {
             "Recent Files",
             style: Theme.of(context).textTheme.subtitle1,
           ),
-          SizedBox(
+         SizedBox(
             width: double.infinity,
-            child: DataTable(
-              horizontalMargin: 0,
-              columnSpacing: defaultPadding,
-              columns: [
-                DataColumn(
-                  label: Text("File Name"),
-                ),
-                DataColumn(
-                  label: Text("Date"),
-                ),
-                DataColumn(
-                  label: Text("Size"),
-                ),
-              ],
-              rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
-              ),
-            ),
-          ),
+            child: MyDataTable(),
+         ),
         ],
       ),
     );
