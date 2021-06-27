@@ -1,16 +1,22 @@
+import 'package:admin/constants.dart';
+import 'package:admin/screens/dashboard/components/recent_charts.dart';
+import 'package:admin/screens/dashboard/components/recent_files.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'my_fields.dart';
+
 /// This is the main application widget.
 class DashboardTabs extends StatelessWidget {
-  const DashboardTabs({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50.0,
-      child: MaterialApp(
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      child: SizedBox.fromSize(
+        child: MaterialApp (
         home: Tabs(),
+        debugShowCheckedModeBanner: false,
+      ),
       ),
     );
   }
@@ -26,25 +32,58 @@ class Tabs extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<Tabs> {
+  final List<Tab> myTabs = <Tab>[
+    Tab(
+      child: Align(
+        alignment: Alignment.center,
+        child: Text("TEXTS"),
+      ),
+    ),
+    Tab(
+      child: Align(
+        alignment: Alignment.center,
+        child: Text("CHARTS"),
+      ),
+    ),
+    Tab(
+      child: Align(
+        alignment: Alignment.center,
+        child: Text("DATATABLES"),
+      ),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: bgColor,
+          elevation: 0,
           bottom: TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],
+            labelColor: primaryTextColor,
+            unselectedLabelColor: secondaryTextColor,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicator: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
+                color: secondaryColor),
+            tabs: myTabs,
           ),
         ),
         body: TabBarView(
           children: [
-            Icon(Icons.directions_car),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            SizedBox(
+              child: MyFiles(),
+            ),
+            SizedBox(
+              child: RecentFiles(),
+            ),
+            SizedBox(
+              child: RecentCharts(),
+            ),
           ],
         ),
       ),

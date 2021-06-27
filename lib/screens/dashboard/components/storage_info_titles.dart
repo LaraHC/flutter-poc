@@ -27,7 +27,7 @@ class StorageInfoTitles extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.white,
+                color: primaryTextColor,
               ),
             ),
             SizedBox(height: profilePadding),
