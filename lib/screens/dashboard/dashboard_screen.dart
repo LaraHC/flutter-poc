@@ -16,7 +16,6 @@ class DashboardScreen extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.all(defaultPadding),
-
         child: Column(
           children: [
             Header(),
@@ -31,8 +30,7 @@ class DashboardScreen extends StatelessWidget {
                       DashboardTabs(),
                       if (Responsive.isMobile(context))
                         SizedBox(height: defaultPadding),
-                      if (Responsive.isMobile(context))
-                        StarageDetails(),
+                      if (Responsive.isMobile(context)) StarageDetails(),
                     ],
                   ),
                 ),

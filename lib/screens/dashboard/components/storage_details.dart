@@ -14,7 +14,7 @@ class StarageDetails extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: transparentWhite,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -23,18 +23,20 @@ class StarageDetails extends StatelessWidget {
           //SizedBox(height: defaultPadding),
           //LineChartWidget(),
           StorageInfoTitles(
-            patientID: "esijd84",
-            customID: "Patient 34",
-            status: "active",
-            associatedCarers: "EricCarer",
-          ),
+              patientIDtitle: "Patient ID",
+              patientID: "esijd84",
+              customID: "Patient 34",
+              status: "active"),
           Divider(
-            color: Colors.white,
+            color: secondaryTextColor,
           ),
           StorageInfoCard(
-            yearsTitle: "Years",
-            yearsInfo: "32",
-          ),
+              yearsTitle: "Years",
+              yearsInfo: " 32",
+              sexTitle: "Sex",
+              sexInfo: " Male",
+              heightTitle: "Height",
+              heightInfo: " 175cm"),
         ],
       ),
     );

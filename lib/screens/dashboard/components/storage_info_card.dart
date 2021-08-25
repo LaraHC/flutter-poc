@@ -4,13 +4,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 
 class StorageInfoCard extends StatelessWidget {
-  const StorageInfoCard({
-    Key? key,
-    required this.yearsTitle,
-    required this.yearsInfo,
-  }) : super(key: key);
+  const StorageInfoCard(
+      {Key? key,
+      required this.yearsTitle,
+      required this.yearsInfo,
+      required this.sexTitle,
+      required this.sexInfo,
+      required this.heightTitle,
+      required this.heightInfo})
+      : super(key: key);
 
-  final String yearsTitle, yearsInfo;
+  final String yearsTitle,
+      yearsInfo,
+      sexTitle,
+      sexInfo,
+      heightTitle,
+      heightInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -18,30 +27,47 @@ class StorageInfoCard extends StatelessWidget {
       margin: EdgeInsets.only(top: defaultPadding),
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        border: Border.all(width: 2, color: primaryColor.withOpacity(0.15)),
         borderRadius: const BorderRadius.all(
           Radius.circular(defaultPadding),
         ),
       ),
       child: Row(
         children: [
-          SizedBox(
-            height: 20,
-            width: 20,
-            child: Icon(Icons.female),
-          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    yearsTitle,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      Text(yearsTitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      Text(yearsInfo),
+                    ],
                   ),
-                  Text(yearsInfo, style: Theme.of(context).textTheme.caption!),
+                  Divider(),
+                  Row(
+                    children: [
+                      Text(sexTitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      Text(sexInfo),
+                    ],
+                  ),
+                  Divider(),
+                  Row(
+                    children: [
+                      Text(heightTitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      Text(heightInfo)
+                    ],
+                  )
                 ],
               ),
             ),
