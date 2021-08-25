@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
-import '../../../responsive.dart';
 import 'form.dart';
 
-class linkButton extends StatelessWidget {
-  const linkButton({
+class LinkButton extends StatelessWidget {
+  const LinkButton({
     Key? key,
     required this.buttonText,
   }) : super(key: key);

@@ -56,7 +56,7 @@ class StorageInfoTitles extends StatelessWidget {
               ),
             ),
             SizedBox(height: profilePadding),
-            linkButton(
+            LinkButton(
               buttonText: "Edit data",
             ),
             SizedBox(height: profilePadding),
