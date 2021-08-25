@@ -41,13 +41,7 @@ class StorageInfoCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Text(
-                    "$yearsInfo Years",
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption!
-                        .copyWith(color: Colors.white70),
-                  ),
+                  Text(yearsInfo, style: Theme.of(context).textTheme.caption!),
                 ],
               ),
             ),
