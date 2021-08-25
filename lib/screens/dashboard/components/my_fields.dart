@@ -29,7 +29,7 @@ class MyFiles extends StatelessWidget {
                 "My Files",
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              AddButton(),
+              AddButton(buttonText: "Add new"),
             ],
           ),
           SizedBox(height: defaultPadding),

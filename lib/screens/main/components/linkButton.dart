@@ -3,8 +3,8 @@ import '../../../constants.dart';
 import '../../../responsive.dart';
 import 'form.dart';
 
-class AddButton extends StatelessWidget {
-  const AddButton({
+class linkButton extends StatelessWidget {
+  const linkButton({
     Key? key,
     required this.buttonText,
   }) : super(key: key);
@@ -13,17 +13,7 @@ class AddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-        primary: primaryButton,
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultPadding * 1.5,
-          vertical: defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
-        ),
-        shape: new RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(30.0),
-        ),
-      ),
+    return TextButton.icon(
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
@@ -42,8 +32,12 @@ class AddButton extends StatelessWidget {
           ],
         ),
       ),
-      icon: Icon(Icons.add),
       label: Text(buttonText),
+      icon: Icon(Icons.edit),
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.all(16.0),
+        primary: darkGrey,
+      ),
     );
   }
 }
