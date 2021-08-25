@@ -1,11 +1,7 @@
 import 'package:admin/screens/dashboard/components/storage_info_titles.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
-import 'barChart.dart';
-import 'lineChart.dart';
-import 'pieChart.dart';
 import 'storage_info_card.dart';
 
 class StarageDetails extends StatelessWidget {
@@ -33,7 +29,7 @@ class StarageDetails extends StatelessWidget {
             associatedCarers: "EricCarer",
           ),
           Divider(
-              color: Colors.white,
+            color: Colors.white,
           ),
           StorageInfoCard(
             yearsTitle: "Years",
