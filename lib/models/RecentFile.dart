@@ -1,7 +1,15 @@
+import 'package:flutter/cupertino.dart';
+
 class RecentFile {
   final String? icon, title, date, size;
 
   RecentFile({this.icon, this.title, this.date, this.size});
+}
+
+class RecentHeader {
+  final String? header;
+
+  RecentHeader({this.header});
 }
 
 List demoRecentFiles = [
@@ -47,4 +55,10 @@ List demoRecentFiles = [
     date: "25-02-2021",
     size: "34.5mb",
   ),
+];
+
+List demoTableHeaders = [
+  RecentHeader(header: 'User ID'),
+  RecentHeader(header: 'Date'),
+  RecentHeader(header: 'Size'),
 ];

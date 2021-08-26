@@ -9,24 +9,16 @@ class MyDataTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DataTable(
-        horizontalMargin: 0,
-        columnSpacing: defaultPadding,
-        columns: [
-          DataColumn(
-            label: Text("User ID"),
-          ),
-          DataColumn(
-            label: Text("Date"),
-          ),
-          DataColumn(
-            label: Text("Size"),
-          ),
-        ],
-        rows: List.generate(
-          demoRecentFiles.length,
-              (index) => recentFileDataRow(demoRecentFiles[index]),
-        ),
-      );
+      horizontalMargin: 0,
+      columnSpacing: defaultPadding,
+      columns: List.generate(
+        demoTableHeaders.length,
+        (index) => recentFileDataHeaders(demoTableHeaders[index]),
+      ),
+      rows: List.generate(
+        demoRecentFiles.length,
+        (index) => recentFileDataRow(demoRecentFiles[index]),
+      ),
+    );
   }
 }
-

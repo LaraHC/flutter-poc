@@ -70,3 +70,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
     ],
   );
 }
+
+DataColumn recentFileDataHeaders(RecentHeader headerInfo) {
+  return DataColumn(label: Text(headerInfo.header!));
+}
