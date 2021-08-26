@@ -14,7 +14,7 @@ class RecentFiles extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: bgColor,
         //borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -24,10 +24,10 @@ class RecentFiles extends StatelessWidget {
             "Recent Files",
             style: Theme.of(context).textTheme.subtitle1,
           ),
-         SizedBox(
+          SizedBox(
             width: double.infinity,
             child: MyDataTable(),
-         ),
+          ),
         ],
       ),
     );

@@ -13,10 +13,10 @@ class DashboardTabs extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       child: SizedBox.fromSize(
-        child: MaterialApp (
-        home: Tabs(),
-        debugShowCheckedModeBanner: false,
-      ),
+        child: MaterialApp(
+          home: Tabs(),
+          debugShowCheckedModeBanner: false,
+        ),
       ),
     );
   }
@@ -36,7 +36,7 @@ class _MyStatefulWidgetState extends State<Tabs> {
     Tab(
       child: Align(
         alignment: Alignment.center,
-        child: Text("TEXTS"),
+        child: Text("TEXT"),
       ),
     ),
     Tab(
@@ -58,19 +58,26 @@ class _MyStatefulWidgetState extends State<Tabs> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: bgColor,
-          elevation: 0,
-          bottom: TabBar(
-            labelColor: primaryTextColor,
-            unselectedLabelColor: secondaryTextColor,
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicator: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10)),
-                color: secondaryColor),
-            tabs: myTabs,
+        backgroundColor: bgColor,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50.0), // here the desired height
+          child: AppBar(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+            backgroundColor: darkPurple,
+            elevation: 0,
+            bottom: TabBar(
+              indicatorPadding: EdgeInsets.zero,
+              labelColor: primaryTextColor,
+              labelStyle: TextStyle(fontWeight: FontWeight.bold),
+              unselectedLabelColor: primaryColor,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: secondaryColor),
+              tabs: myTabs,
+            ),
           ),
         ),
         body: TabBarView(
@@ -79,10 +86,10 @@ class _MyStatefulWidgetState extends State<Tabs> {
               child: MyFiles(),
             ),
             SizedBox(
-              child: RecentFiles(),
+              child: RecentCharts(),
             ),
             SizedBox(
-              child: RecentCharts(),
+              child: RecentFiles(),
             ),
           ],
         ),

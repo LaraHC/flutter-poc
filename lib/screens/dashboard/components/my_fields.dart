@@ -17,7 +17,7 @@ class MyFiles extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: bgColor,
         //borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
