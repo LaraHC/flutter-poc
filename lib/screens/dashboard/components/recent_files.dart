@@ -24,6 +24,17 @@ class RecentFiles extends StatelessWidget {
             "Recent Files",
             style: Theme.of(context).textTheme.subtitle1,
           ),
+          Card(
+            child: new ListTile(
+              leading: new Icon(Icons.search),
+              title: new TextField(
+                decoration: new InputDecoration(
+                    hintText: 'Search', border: InputBorder.none),
+              ),
+              trailing: new IconButton(
+                  onPressed: onPressed(), icon: new Icon(Icons.cancel)),
+            ),
+          ),
           SizedBox(
             width: double.infinity,
             child: MyDataTable(),
@@ -32,6 +43,8 @@ class RecentFiles extends StatelessWidget {
       ),
     );
   }
+
+  onPressed() {}
 }
 
 DataRow recentFileDataRow(RecentFile fileInfo) {
