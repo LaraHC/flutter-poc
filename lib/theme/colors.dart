@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 /// consists of solid colors, without transparency
 ///
 /// used for main solid colors
-const HumanuiPrimaryDark = const Color(0xff161849);
-const HumanuiPrimary = const Color(0xff2026d2);
-const HumanuiAccent = const Color(0xff62e1fc);
-const HumanuiSecondary = const Color(0xfff34d77);
+const HumanuiPrimaryDark = const Color(0xFF686161);
+const HumanuiLightBackground = const Color(0xFFFCFCFE);
+const HumanuiLightPurple = const Color(0xFFF8F8FF);
+const HumanuiPurple = const Color(0xFFA3ABC1);
+
 const HumanuiSuccess = const Color(0xff4aa740);
 const HumanuiSuccessLight = const Color(0xffe6f4e9);
 const HumanuiWarning = const Color(0xffff8212);
@@ -17,8 +18,10 @@ const HumanuiInfo = const Color(0xff3eacfc);
 const HumanuiInfoLight = const Color(0xffe8f0fd);
 const HumanuiDanger = const Color(0xfff64a4a);
 const HumanuiDangerLight = const Color(0xfffce8e6);
+
 const HumanuiWhite = const Color(0xffffffff);
-const HumanuiGray = const Color(0xffc2c7cf);
+const HumanuiGrey = const Color(0xFF818896);
+const HumanuiGreyLight = const Color(0xFFACACAC);
 const HumanuiBlack = const Color(0xff000000);
 
 ///
