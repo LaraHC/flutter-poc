@@ -30,7 +30,7 @@ class MyFiles extends StatelessWidget {
                 "My Files",
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              SuccessButton(title: 'title')
+              SuccessButton(title: 'title', icon: Icons.add)
             ],
           ),
           SizedBox(height: defaultPadding),

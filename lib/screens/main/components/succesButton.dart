@@ -6,6 +6,7 @@ import 'form.dart';
 
 class SuccessButton extends StatelessWidget {
   final String title;
+  final IconData icon;
   final bool disabled;
   final bool busy;
   final void Function()? onPressed;
@@ -14,6 +15,7 @@ class SuccessButton extends StatelessWidget {
   const SuccessButton({
     Key? key,
     required this.title,
+    required this.icon,
     this.disabled = false,
     this.busy = false,
     this.onPressed,
@@ -22,6 +24,7 @@ class SuccessButton extends StatelessWidget {
 
   const SuccessButton.outline({
     required this.title,
+    required this.icon,
     this.onPressed,
   })  : disabled = false,
         busy = false,
@@ -30,7 +33,7 @@ class SuccessButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      icon: Icon(Icons.add),
+      icon: Icon(icon),
       label: Text(title,
           style: bodyStyle.copyWith(
             fontWeight: !outline ? FontWeight.bold : FontWeight.w400,
