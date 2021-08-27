@@ -34,25 +34,25 @@ class SuccessButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: Icon(icon),
+    return TextButton.icon(
+      icon: Icon(icon, color: !outline ? HumanuiWhite : HumanuiSuccess),
       label: Text(title,
           style: bodyStyle.copyWith(
             fontWeight: !outline ? FontWeight.bold : FontWeight.w400,
             color: !outline ? Colors.white : HumanuiSuccess,
           )),
-      style: ElevatedButton.styleFrom(
-        primary: !outline
-            ? (!disabled ? HumanuiSuccess : HumanuiGrey)
-            : Colors.transparent,
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultPadding * 1.5,
-          vertical: defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
-        ),
-        shape: new RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(30.0),
-        ),
-      ),
+      style: TextButton.styleFrom(
+          primary: !outline
+              ? (!disabled ? HumanuiSuccess : HumanuiGrey)
+              : Colors.transparent,
+          padding: EdgeInsets.symmetric(
+            horizontal: defaultPadding * 1.5,
+            vertical: defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+          ),
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(30.0),
+              side: BorderSide(color: HumanuiSuccess, width: !outline ? 0 : 1)),
+          elevation: 0),
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(

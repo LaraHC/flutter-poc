@@ -31,7 +31,7 @@ class MyFiles extends StatelessWidget {
                 "My Files",
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              SuccessButton(title: 'title', icon: Icons.add),
+              SuccessButton.outline(title: 'title', icon: Icons.add),
               DangerButton(title: 'title', icon: Icons.remove),
               LinkButton(title: 'title', icon: Icons.edit)
             ],
