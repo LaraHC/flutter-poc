@@ -10,7 +10,7 @@ const HumanuiLightBackground = const Color(0xFFFCFCFE);
 const HumanuiLightPurple = const Color(0xFFF8F8FF);
 const HumanuiPurple = const Color(0xFFA3ABC1);
 
-const HumanuiSuccess = const Color(0xff4aa740);
+const HumanuiSuccess = const Color(0xFF04BBC7);
 const HumanuiSuccessLight = const Color(0xffe6f4e9);
 const HumanuiWarning = const Color(0xffff8212);
 const HumanuiWarningLight = const Color(0xffffecdc);
