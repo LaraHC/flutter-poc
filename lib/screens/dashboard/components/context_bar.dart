@@ -1,6 +1,7 @@
 import 'package:admin/constants.dart';
 import 'package:admin/screens/dashboard/components/recent_charts.dart';
 import 'package:admin/screens/dashboard/components/recent_files.dart';
+import 'package:admin/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,23 +35,14 @@ class Tabs extends StatefulWidget {
 class _MyStatefulWidgetState extends State<Tabs> {
   final List<Tab> myTabs = <Tab>[
     Tab(
-      child: Align(
-        alignment: Alignment.center,
-        child: Text("TEXT"),
-      ),
+      text: "TEXT",
     ),
     Tab(
-      child: Align(
-        alignment: Alignment.center,
-        child: Text("CHARTS"),
-      ),
+      text: "CHARTS",
     ),
     Tab(
-      child: Align(
-        alignment: Alignment.center,
-        child: Text("DATATABLES"),
-      ),
-    ),
+      text: "DATATABLES",
+    )
   ];
 
   @override
@@ -65,17 +57,16 @@ class _MyStatefulWidgetState extends State<Tabs> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
             ),
-            backgroundColor: darkPurple,
+            backgroundColor: HumanuiLightPurple,
             elevation: 0,
+            primary: false,
             bottom: TabBar(
-              indicatorPadding: EdgeInsets.zero,
+              labelPadding: EdgeInsets.all(0),
               labelColor: primaryTextColor,
               labelStyle: TextStyle(fontWeight: FontWeight.bold),
-              unselectedLabelColor: primaryColor,
-              indicatorSize: TabBarIndicatorSize.label,
+              unselectedLabelColor: HumanuiPurple,
               indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: secondaryColor),
+                  borderRadius: BorderRadius.circular(50), color: HumanuiWhite),
               tabs: myTabs,
             ),
           ),
