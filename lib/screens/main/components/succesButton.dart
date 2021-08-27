@@ -2,73 +2,62 @@ import 'package:admin/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'textStyles.dart';
+import 'form.dart';
 
 class SuccessButton extends StatelessWidget {
   final String title;
   final bool disabled;
   final bool busy;
-  final void Function()? onTap;
+  final void Function()? onPressed;
   final bool outline;
-  final Widget? leading;
 
   const SuccessButton({
     Key? key,
     required this.title,
     this.disabled = false,
     this.busy = false,
-    this.onTap,
-    this.leading,
+    this.onPressed,
   })  : outline = false,
         super(key: key);
 
   const SuccessButton.outline({
     required this.title,
-    this.onTap,
-    this.leading,
+    this.onPressed,
   })  : disabled = false,
         busy = false,
         outline = true;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 350),
-        width: double.infinity,
-        height: 48,
-        alignment: Alignment.center,
-        decoration: !outline
-            ? BoxDecoration(
-                color: !disabled ? HumanuiSuccess : HumanuiGrey,
-                borderRadius: BorderRadius.circular(8),
-              )
-            : BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: HumanuiSuccess,
-                  width: 1,
-                )),
-        child: !busy
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (leading != null) leading!,
-                  if (leading != null) SizedBox(width: 5),
-                  Text(
-                    title,
-                    style: bodyStyle.copyWith(
-                      fontWeight: !outline ? FontWeight.bold : FontWeight.w400,
-                      color: !outline ? Colors.white : HumanuiSuccess,
-                    ),
-                  ),
-                ],
-              )
-            : CircularProgressIndicator(
-                strokeWidth: 8,
-                valueColor: AlwaysStoppedAnimation(Colors.white),
-              ),
+    return ElevatedButton.icon(
+      icon: Icon(Icons.add),
+      label: Text(title,
+          style: bodyStyle.copyWith(
+            fontWeight: !outline ? FontWeight.bold : FontWeight.w400,
+            color: !outline ? Colors.white : HumanuiSuccess,
+          )),
+      style: ElevatedButton.styleFrom(
+        primary: !outline
+            ? (!disabled ? HumanuiSuccess : HumanuiGrey)
+            : Colors.transparent,
+      ),
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('AlertDialog Title'),
+          content: const Text('AlertDialog description'),
+          actions: <Widget>[
+            MyForm(),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'OK'),
+              child: const Text('OK'),
+            ),
+          ],
+        ),
       ),
     );
   }
