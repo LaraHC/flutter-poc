@@ -1,8 +1,10 @@
+import 'package:admin/constants.dart';
 import 'package:admin/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'textStyles.dart';
-import 'form.dart';
+import '../../../../responsive.dart';
+import '../textStyles.dart';
+import '../form.dart';
 
 class SuccessButton extends StatelessWidget {
   final String title;
@@ -43,6 +45,13 @@ class SuccessButton extends StatelessWidget {
         primary: !outline
             ? (!disabled ? HumanuiSuccess : HumanuiGrey)
             : Colors.transparent,
+        padding: EdgeInsets.symmetric(
+          horizontal: defaultPadding * 1.5,
+          vertical: defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+        ),
+        shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(30.0),
+        ),
       ),
       onPressed: () => showDialog<String>(
         context: context,

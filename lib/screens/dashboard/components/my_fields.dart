@@ -1,6 +1,7 @@
 import 'package:admin/models/MyFiles.dart';
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/main/components/addButton.dart';
+import 'package:admin/screens/main/components/buttons/dangerButton.dart';
+import 'package:admin/screens/main/components/buttons/linkButton.dart';
 import 'package:admin/screens/main/components/buttons/succesButton.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,9 @@ class MyFiles extends StatelessWidget {
                 "My Files",
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              SuccessButton(title: 'title', icon: Icons.add)
+              SuccessButton(title: 'title', icon: Icons.add),
+              DangerButton(title: 'title', icon: Icons.remove),
+              LinkButton(title: 'title', icon: Icons.edit)
             ],
           ),
           SizedBox(height: defaultPadding),

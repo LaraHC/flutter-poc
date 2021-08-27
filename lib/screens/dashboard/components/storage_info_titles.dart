@@ -1,4 +1,4 @@
-import 'package:admin/screens/main/components/linkButton.dart';
+import 'package:admin/screens/main/components/buttons/linkButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -56,9 +56,7 @@ class StorageInfoTitles extends StatelessWidget {
               ),
             ),
             SizedBox(height: profilePadding),
-            LinkButton(
-              buttonText: "Edit data",
-            ),
+            LinkButton(title: 'Edit data', icon: Icons.edit),
             SizedBox(height: profilePadding),
             Container(
               padding: EdgeInsets.all(defaultPadding * 0.3),
